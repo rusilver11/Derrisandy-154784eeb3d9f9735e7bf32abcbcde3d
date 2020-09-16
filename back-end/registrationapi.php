@@ -30,8 +30,8 @@
                 $user = array(  
                 'id'=>$id,
                 'username'=>$username,   
-                'login_time'=>$login_time,  
-                'login_state'=>$login_state  
+                'logintime'=>$login_time,  
+                'loginstate'=>$login_state  
                 );
 
                 $stmt->close();  
@@ -63,8 +63,8 @@
         $user = array(  
                 'id'=>$id, 
                 'username'=>$username,   
-                'login_time'=>$login_time,  
-                'login_state'=>$login_state  
+                'logintime'=>$login_time,  
+                'loginstate'=>$login_state  
         );  
        
         $response['error'] = false;   
