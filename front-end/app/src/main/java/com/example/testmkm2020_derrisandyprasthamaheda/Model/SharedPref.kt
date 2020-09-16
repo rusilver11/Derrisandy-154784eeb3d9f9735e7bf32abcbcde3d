@@ -34,7 +34,7 @@ class SharedPref private constructor(context: Context){
     fun userLogin(user: User) {
         val sharedPreferences = ctx?.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
-        editor?.putInt(KEY_USERNAME, user.id)
+        editor?.putInt(KEY_ID, user.id)
         editor?.putString(KEY_USERNAME, user.username)
         editor?.putString(KEY_LOGINTIME, user.logintime)
         editor?.putString(KEY_LOGINSTATE, user.loginstate)
@@ -52,10 +52,10 @@ class SharedPref private constructor(context: Context){
     companion object {
 
         private val SHARED_PREF_NAME = "volleyregisterlogin"
-        private val KEY_ID = "keyid"
         private val KEY_USERNAME = "keyusername"
         private val KEY_LOGINTIME = "keylogintime"
         private val KEY_LOGINSTATE = "keyloginstate"
+        private val KEY_ID = "keyid"
         private var mInstance: SharedPref? = null
         private var ctx: Context? = null
         @Synchronized

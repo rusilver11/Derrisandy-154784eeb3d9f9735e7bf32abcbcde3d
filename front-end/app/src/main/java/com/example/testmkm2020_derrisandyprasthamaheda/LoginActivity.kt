@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         if (SharedPref.getInstance(this).isLoggedIn) {
-            if(SharedPref.getInstance(this).user.loginstate == "") {
+            if(SharedPref.getInstance(this).user.username != "") {
                 finish()
                 startActivity(Intent(this, MainActivity::class.java))
             }else {
