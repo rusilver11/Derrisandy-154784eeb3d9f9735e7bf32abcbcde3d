@@ -28,18 +28,17 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         if (SharedPref.getInstance(this).isLoggedIn) {
-//            if(SharedPref.getInstance(this).user.loginstate == "") {
-//                finish()
-//
-//            }
+            if(SharedPref.getInstance(this).user.loginstate == "") {
+                finish()
+                startActivity(Intent(this, MainActivity::class.java))
+            }else {
+                finish()
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
 //            else if(SharedPref.getInstance(this).user.loginstate == "Login") {
 //                finish()
 //                startActivity(Intent(this, LoginActivity::class.java))
 //            }
-            startActivity(Intent(this, MainActivity::class.java))
-        }else {
-            finish()
-            startActivity(Intent(this, LoginActivity::class.java))
         }
         etName = findViewById(R.id.etUserName)
         etPassword = findViewById(R.id.etUserPassword)
@@ -120,5 +119,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest)
+        startActivity(Intent(applicationContext, MainActivity::class.java))
     }
 }
