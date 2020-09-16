@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             SharedPref.getInstance(applicationContext).logout()
             startActivity(Intent(applicationContext, LoginActivity::class.java))
         })
+        shusername.setText(SharedPref.getInstance(this).user.username.toString())
 
     }
 }
